@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zombie Survival FPS</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="game-container"></div>
+
+  <div id="hud" class="hidden">
+    <div class="hud-header">
+      <div class="health-panel">
+        <div class="health-header">
+          <span class="health-icon">♥</span>
+          <span class="health-label">Health</span>
+          <span id="health-text" class="health-value">100 / 100</span>
+        </div>
+        <div class="health-bar-outer">
+          <div class="health-bar-track">
+            <div id="health-bar" class="health-bar"></div>
+            <div id="health-bar-damage" class="health-bar-damage"></div>
+          </div>
+          <div class="health-segments" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hud-top">
+        <div class="stat wave-stat">
+          <span class="stat-label">Wave</span>
+          <span id="wave-text" class="stat-value">1</span>
+        </div>
+        <div class="stat score-stat">
+          <span class="stat-label">Score</span>
+          <span id="score-text" class="stat-value">0</span>
+        </div>
+        <div class="stat kills-stat">
+          <span class="stat-label">Kills</span>
+          <span id="kills-text" class="stat-value">0</span>
+        </div>
+        <div class="stat remaining-stat">
+          <span class="stat-label">Remaining</span>
+          <span id="remaining-text" class="stat-value">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="wave-banner" class="wave-banner hidden">
+      <span id="wave-banner-title">Wave 1</span>
+      <span id="wave-banner-sub">Incoming horde</span>
+    </div>
+
+    <div id="crosshair">
+      <span class="crosshair-line h"></span>
+      <span class="crosshair-line v"></span>
+    </div>
+    <div id="ammo-hint">Click to shoot</div>
+  </div>
+
+  <div id="start-screen" class="overlay">
+    <div class="panel">
+      <h1>Zombie Survival</h1>
+      <p class="subtitle">Hold the line. Survive the horde.</p>
+      <ul class="controls">
+        <li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> Move</li>
+        <li><kbd>Mouse</kbd> Look around</li>
+        <li><kbd>LMB</kbd> Shoot</li>
+        <li><kbd>Shift</kbd> Sprint</li>
+      </ul>
+      <button id="start-btn" class="btn primary">Start Game</button>
+    </div>
+  </div>
+
+  <div id="game-over-screen" class="overlay hidden">
+    <div class="panel">
+      <h1>Game Over</h1>
+      <p class="subtitle">The horde got you.</p>
+      <div class="final-stats">
+        <div class="final-stat">
+          <span class="stat-label">Final Score</span>
+          <span id="final-score" class="stat-value large">0</span>
+        </div>
+        <div class="final-stat">
+          <span class="stat-label">Waves Survived</span>
+          <span id="final-wave" class="stat-value large">0</span>
+        </div>
+        <div class="final-stat">
+          <span class="stat-label">Total Kills</span>
+          <span id="final-kills" class="stat-value large">0</span>
+        </div>
+      </div>
+      <button id="restart-btn" class="btn primary">Play Again</button>
+    </div>
+  </div>
+
+  <script src="lib/three.min.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
